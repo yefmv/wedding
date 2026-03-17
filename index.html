@@ -11,13 +11,26 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             color: #3d2a1d;
-            background: #fdfaf7;
+            background: #e2ddd9; /* Цвет полей за сайтом */
             line-height: 1.6;
             overflow-x: hidden;
         }
 
+        /* Оболочка сайта с фоновым изображением */
+        .main-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            background: linear-gradient(rgba(253, 250, 247, 0.85), rgba(253, 250, 247, 0.85)), 
+                        url("https://wedwed.ru/_cache/7f9f47b9d22ec63413e39a83aa380393/68893/b_c4e875fe0554b160cb9f3de16e553dbe.webp");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Эффект параллакса при скролле */
+            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
         section {
-            padding: 80px 20px;
+            padding: 80px 25px;
             text-align: center;
         }
 
@@ -25,13 +38,14 @@
             font-family: 'Playfair Display', serif;
             letter-spacing: 2px;
             text-transform: uppercase;
+            font-weight: 400;
         }
 
-        /* АНИМАЦИЯ ПОЯВЛЕНИЯ (CSS) */
+        /* АНИМАЦИЯ ПОЯВЛЕНИЯ */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s ease-out;
+            transition: all 0.9s ease-out;
         }
 
         .reveal.active {
@@ -46,7 +60,7 @@
             background-size: cover;
             background-position: center;
             color: white;
-            height: 85vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -55,190 +69,151 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 8vw, 64px);
+            font-size: clamp(32px, 10vw, 56px);
             margin: 0;
-            animation: fadeInDown 1.2s ease-out;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            letter-spacing: 4px;
         }
 
         /* КАРТОЧКА ПРИГЛАШЕНИЯ */
         .card {
-            background: white;
-            max-width: 650px;
-            margin: -80px auto 0;
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 85%;
+            margin: -60px auto 0;
+            padding: 35px 20px;
             border-radius: 15px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
             position: relative;
             z-index: 2;
+            backdrop-filter: blur(5px);
         }
 
         .timer {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
+            gap: 5px;
+            margin-top: 25px;
         }
 
-        .timer div {
-            flex: 1;
-            padding: 10px;
-            background: #f9f6f3;
-            border-radius: 8px;
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-
-        .timer span {
-            font-size: 24px;
-            font-weight: 600;
-            display: block;
-            color: #886468;
-        }
+        .timer div { flex: 1; border-right: 1px solid #ddd; }
+        .timer div:last-child { border-right: none; }
+        .timer span { font-size: 22px; font-family: 'Playfair Display', serif; display: block; color: #886468; }
+        .timer-label { font-size: 10px; text-transform: uppercase; opacity: 0.6; }
 
         /* ТАЙМИНГ */
         .timing-container {
-            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
-                        url('https://i.ibb.co/TywXNDH/cedcece4e8479c851820fb54147eb387.jpg');
-            background-size: cover;
-            max-width: 650px;
-            margin: auto;
-            padding: 50px 30px;
-            border-radius: 15px;
+            text-align: left;
+            max-width: 280px;
+            margin: 30px auto;
+            position: relative;
+            padding-left: 25px;
+            border-left: 1px solid #886468;
         }
 
-        .timing-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px dashed #d0d0d0;
+        .timing-item { margin-bottom: 25px; position: relative; }
+        .timing-item::before {
+            content: ''; position: absolute; left: -29px; top: 8px;
+            width: 8px; height: 8px; background: #886468; border-radius: 50%;
         }
 
-        .time { font-weight: 600; font-size: 18px; color: #886468; width: 60px; text-align: left; }
-        .event { flex: 1; text-align: right; }
+        .time { font-family: 'Playfair Display', serif; font-size: 18px; color: #886468; }
+        .event { font-size: 15px; display: block; font-weight: 300; }
 
         /* ДРЕСС-КОД */
-        .dress-section { background: #f4efeb; }
-        
-        .dress-images {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-        }
+        .dress-section { background: rgba(136, 100, 104, 0.1); border-radius: 40px 40px 0 0; }
+        .dress-image { width: 45%; max-width: 150px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); }
+        .colors { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+        .color { width: 38px; height: 38px; border-radius: 50%; border: 2px solid white; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
 
-        .dress-image { width: 45%; max-width: 180px; height: auto; }
-
-        .colors {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .color {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        /* ЛОКАЦИЯ (ВМЕСТО КАРТЫ) */
+        .location-info {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
         /* КНОПКИ */
         .button {
             display: inline-block;
-            margin-top: 25px;
-            padding: 16px 40px;
+            margin-top: 20px;
+            padding: 14px 40px;
             background: #886468;
-            color: white;
+            color: white !important;
             text-decoration: none;
-            border-radius: 40px;
-            transition: 0.3s;
-            font-size: 13px;
-            letter-spacing: 1px;
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-        }
-
-        .button:hover { background: #6a4d51; transform: scale(1.05); }
-
-        .location-map {
-            max-width: 800px;
-            margin: 30px auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            height: 400px;
+            transition: 0.3s;
         }
 
         footer {
             padding: 80px 20px;
             background: #3d2a1d;
             color: white;
+            border-radius: 40px 40px 0 0;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 32px; }
-            .card { margin: -50px 15px 0; padding: 25px; }
-            .timer span { font-size: 18px; }
+        @media (max-width: 480px) {
+            .main-wrapper { width: 100%; }
         }
     </style>
 </head>
 <body>
 
+<div class="main-wrapper">
     <section class="hero">
-        <h1>ПОЛИНА И ИЛЬЯ</h1>
-        <p style="font-size: 18px; letter-spacing: 5px; margin-top: 10px;">29.06.2026</p>
+        <p style="letter-spacing: 6px; font-size: 14px; margin-bottom: 10px;">WEDDING DAY</p>
+        <h1>ПОЛИНА & ИЛЬЯ</h1>
+        <p style="font-size: 18px; letter-spacing: 5px; margin-top: 15px;">29.06.2026</p>
     </section>
 
-    <section class="reveal">
-        <div class="card">
-            <h3>Дорогие близкие!</h3>
-            <p>Один день в этом году будет для нас особенным, и мы хотим провести его с вами. Приглашаем вас на нашу свадьбу!</p>
+    <section>
+        <div class="card reveal">
+            <h3>Дорогие родные и друзья!</h3>
+            <p style="font-size: 14px; font-weight: 300;">В нашей жизни скоро состоится важное и радостное событие — наша свадьба.  
+      Мы будем счастливы, если вы проведёте вместе с нами этот особенный день.
+</p>
             
-            <h4 style="margin-top:40px; font-weight: 300; font-size: 12px; letter-spacing: 2px;">ДО СОБЫТИЯ:</h4>
             <div class="timer">
-                <div><span id="days">0</span>дн</div>
-                <div><span id="hours">0</span>час</div>
-                <div><span id="minutes">0</span>мин</div>
-                <div><span id="seconds">0</span>сек</div>
+                <div><span id="days">0</span><div class="timer-label">дней</div></div>
+                <div><span id="hours">0</span><div class="timer-label">часов</div></div>
+                <div><span id="minutes">0</span><div class="timer-label">мин</div></div>
+                <div><span id="seconds">0</span><div class="timer-label">сек</div></div>
             </div>
         </div>
     </section>
 
     <section class="reveal">
+        <h2>План дня</h2>
         <div class="timing-container">
-            <h2>План дня</h2>
             <div class="timing-item">
-                <div class="time">15:30</div>
-                <div class="event">Встреча гостей</div>
+                <span class="time">16:00</span>
+                <span class="event">Сбор гостей и фуршет</span>
             </div>
             <div class="timing-item">
-                <div class="time">16:00</div>
-                <div class="event">Свадебная церемония</div>
+                <span class="time">16:30</span>
+                <span class="event">Торжественная церемония</span>
             </div>
             <div class="timing-item">
-                <div class="time">17:30</div>
-                <div class="event">Ужин и танцы</div>
+                <span class="time">17:30</span>
+                <span class="event">Свадебный ужин</span>
             </div>
             <div class="timing-item">
-                <div class="time">23:30</div>
-                <div class="event">Окончание вечера</div>
+                <span class="time">00:00</span>
+                <span class="event">Завершение вечера</span>
             </div>
         </div>
     </section>
 
     <section class="dress-section reveal">
         <h2>Дресс-код</h2>
-        <p>Для нас самое главное — ваше присутствие. Но если вы захотите поддержать палитру нашей свадьбы, мы будем очень рады:</p>
+        <p style="font-size: 14px; font-weight: 300; margin-bottom: 30px;">Мы хотим создать особенную атмосферу на нашем торжестве,
+        поэтому просим вас учесть дресс-код при выборе наряда</p>
         
         <div class="dress-images">
-            <img src="https://i.ibb.co/7NZ0k6rW/removebg-preview.png" alt="Dress Code Ж" class="dress-image">
-            <img src="https://i.ibb.co/r2BC6z93/removebg-preview.png" alt="Dress Code М" class="dress-image">
+            <img src="https://i.ibb.co/7NZ0k6rW/removebg-preview.png" alt="Ж" class="dress-image">
+            <img src="https://i.ibb.co/r2BC6z93/removebg-preview.png" alt="М" class="dress-image">
         </div>
 
         <div class="colors">
@@ -251,47 +226,48 @@
     </section>
 
     <section class="reveal">
-        <h2>Место встречи</h2>
-        <p>Ленинградская обл., загородный клуб</p>
-        <div class="location-map">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad34fdeda0b6259284258e55a6878734766a35bfd579d67a4cd384ba7ca0307d3&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+        <h2>Где всё будет</h2>
+        <div class="location-info">
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Вилла Парк</p>
+            <p style="font-size: 14px; opacity: 0.8; margin-top: 0;">Золотая ул., 4, Петергоф</p>
+            <a class="button" href="https://yandex.com/maps/-/CPFWvFOk" target="_blank">Как добраться</a>
         </div>
-        <a class="button" href="https://yandex.com/maps/-/CPFWvFOk" target="_blank">Навигатор</a>
     </section>
 
     <footer class="reveal">
-        <p>Ждем вашего ответа до 1 июня</p>
-        <a class="button" href="#" style="background: white; color: #3d2a1d;">Я приду!</a>
-        <p style="margin-top: 40px; opacity: 0.5; font-size: 12px;">#PolinaAndIlya2026</p>
+        <p style="font-size: 15px; margin-bottom: 5px;">Ждем вашего ответа до 1 июня</p>
+        <a class="button" href="#" style="background: white; color: #3d2a1d !important;">Я приду!</a>
+        <p style="margin-top: 40px; opacity: 0.4; font-size: 11px; letter-spacing: 2px;">#ПОЛИНАИИЛЬЯ2026</p>
     </footer>
+</div>
 
-    <script>
-        // ТАЙМЕР
-        const weddingDate = new Date("June 29, 2026 16:00:00").getTime();
-        setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-            if (distance < 0) return;
-            document.getElementById("days").innerHTML = Math.floor(distance / (1000*60*60*24));
-            document.getElementById("hours").innerHTML = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000*60*60)) / (1000*60));
-            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000*60)) / 1000);
-        }, 1000);
+<script>
+    const weddingDate = new Date("June 29, 2026 16:00:00").getTime();
+    
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+        if (distance < 0) return;
+        
+        document.getElementById("days").innerHTML = Math.floor(distance / (1000*60*60*24));
+        document.getElementById("hours").innerHTML = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+        document.getElementById("minutes").innerHTML = Math.floor((distance % (1000*60*60)) / (1000*60));
+        document.getElementById("seconds").innerHTML = Math.floor((distance % (1000*60)) / 1000);
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
 
-        // АНИМАЦИЯ ПРИ СКРОЛЛЕ
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Запустить один раз при загрузке
-    </script>
+    function reveal() {
+        const reveals = document.querySelectorAll(".reveal");
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 80) el.classList.add("active");
+        });
+    }
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+</script>
+
 </body>
 </html>
