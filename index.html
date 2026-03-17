@@ -11,7 +11,7 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             color: #3d2a1d;
-            background: #f5f2ef;
+            background: #fdfaf7;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -19,8 +19,6 @@
         .main-wrapper {
             max-width: 500px;
             margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 40px rgba(0,0,0,0.05);
             min-height: 100vh;
         }
 
@@ -95,23 +93,82 @@
         .timer-label { font-size: 10px; text-transform: uppercase; opacity: 0.6; }
 
         /* ТАЙМИНГ */
+        .timing-section {
+            background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                              url("https://wedwed.ru/_cache/7f9f47b9d22ec63413e39a83aa380393/68893/b_c4e875fe0554b160cb9f3de16e553dbe.webp");
+            background-size: cover;
+            background-position: center;
+            color: #3d2a1d;
+            position: relative;
+        }
+
+        .timing-section::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 250px;
+            height: 100%;
+            background-image: url("https://www.downloadclipart.net/large/15234-flower-sketch-outline-design.png");
+            background-size: contain;
+            background-position: right center;
+            background-repeat: no-repeat;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .timing-section h2 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+        }
+
+        .timing-section .sub-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: -10px;
+            display: block;
+        }
+
         .timing-container {
-            text-align: left;
-            max-width: 280px;
+            max-width: 400px;
             margin: 30px auto;
             position: relative;
-            padding-left: 25px;
-            border-left: 1px solid #886468;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .timing-item { margin-bottom: 30px; position: relative; }
-        .timing-item::before {
-            content: ''; position: absolute; left: -29px; top: 8px;
-            width: 8px; height: 8px; background: #886468; border-radius: 50%;
+        .timing-item {
+            margin-bottom: 0;
+            display: grid;
+            grid-template-columns: 1fr auto 1.5fr;
+            align-items: center;
+            gap: 15px;
         }
 
-        .time { font-family: 'Playfair Display', serif; font-size: 18px; color: #886468; font-weight: 600; }
-        .event { font-size: 15px; display: block; font-weight: 300; }
+        .time { 
+            font-family: 'Playfair Display', serif;
+            font-size: 24px; 
+            color: #886468; 
+            text-align: right;
+            font-weight: 400;
+        }
+
+        .divider {
+            width: 1px;
+            height: 100%;
+            background-color: rgba(61, 42, 29, 0.2);
+            align-self: stretch;
+        }
+
+        .event { 
+            font-size: 15px; 
+            font-weight: 300; 
+            text-align: left;
+        }
 
         /* ДРЕСС-КОД */
         .dress-section { background: rgba(136, 100, 104, 0.08); border-radius: 40px 40px 0 0; }
@@ -134,7 +191,9 @@
 
         .location-info {
             background: #ffffff;
-            padding: 40px 20px;
+            max-width: 300px; /* Уменьшили ширину карточки */
+            margin: 0 auto; /* Отцентровали блок */
+            padding: 30px 20px; /* Немного уменьшили отступы внутри */
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
             position: relative;
@@ -168,6 +227,9 @@
         @media (max-width: 480px) {
             .main-wrapper { width: 100%; }
             section { padding: 60px 20px; }
+            .timing-container { gap: 10px; }
+            .time { font-size: 20px; }
+            .location-info { max-width: 260px; } /* Делаем карточку еще компактнее на смартфонах */
         }
     </style>
 </head>
@@ -182,8 +244,9 @@
 
     <section>
         <div class="card reveal">
-            <h3>Дорогие близкие!</h3>
-            <p style="font-size: 14px; font-weight: 300;">Один день в этом году будет для нас особенным. Мы будем счастливы, если вы проведёте его вместе с нами!</p>
+            <h3>Дорогие родные и друзья!</h3>
+            <p style="font-size: 14px; font-weight: 300; margin-bottom: 10px;">В нашей жизни скоро состоится важное и радостное событие — наша свадьба.</p>
+            <p style="font-size: 14px; font-weight: 300;">Мы будем счастливы, если вы проведёте вместе с нами этот особенный день.</p>
             
             <div class="timer">
                 <div><span id="days">0</span><div class="timer-label">дней</div></div>
@@ -194,24 +257,29 @@
         </div>
     </section>
 
-    <section class="reveal">
-        <h2>План дня</h2>
+    <section class="timing-section reveal">
+        <h2>TIMING</h2>
+        <span class="sub-title">Расписание торжества</span>
         <div class="timing-container">
             <div class="timing-item">
-                <span class="time">16:00</span>
-                <span class="event">Велком и сбор гостей</span>
+                <span class="time">15:30</span>
+                <div class="divider"></div>
+                <span class="event">Сбор гостей / Фуршет</span>
             </div>
             <div class="timing-item">
-                <span class="time">16:30</span>
-                <span class="event">Свадебная церемония</span>
+                <span class="time">16:00</span>
+                <div class="divider"></div>
+                <span class="event">Торжественная церемония</span>
             </div>
             <div class="timing-item">
                 <span class="time">17:30</span>
-                <span class="event">Праздничный банкет</span>
+                <div class="divider"></div>
+                <span class="event">Свадебный ужин</span>
             </div>
             <div class="timing-item">
-                <span class="time">00:00</span>
-                <span class="event">Завершение мероприятия</span>
+                <span class="time">23:30</span>
+                <div class="divider"></div>
+                <span class="event">Завершение вечера</span>
             </div>
         </div>
     </section>
@@ -243,13 +311,12 @@
 
     <footer class="reveal">
         <p style="font-size: 15px; margin-bottom: 5px;">Ждем вашего ответа до 1 июня</p>
-        <a class="button" href="https://t.me/your_nickname" style="background: white; color: #3d2a1d !important;">Я приду!</a>
+        <a class="button" href="#" style="background: white; color: #3d2a1d !important;">Я приду!</a>
         <p style="margin-top: 40px; opacity: 0.4; font-size: 11px; letter-spacing: 2px;">#ПОЛИНАИИЛЬЯ2026</p>
     </footer>
 </div>
 
 <script>
-    // ТАЙМЕР
     const weddingDate = new Date("June 29, 2026 16:00:00").getTime();
     
     function updateTimer() {
@@ -265,7 +332,6 @@
     setInterval(updateTimer, 1000);
     updateTimer();
 
-    // АНИМАЦИЯ СКРОЛЛА
     function reveal() {
         const reveals = document.querySelectorAll(".reveal");
         reveals.forEach(el => {
