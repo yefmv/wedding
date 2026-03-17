@@ -216,6 +216,19 @@
             z-index: 2;
         }
 
+        /* ФОРМА ЯНДЕКСА */
+        .form-container {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .form-container iframe {
+            width: 100%;
+            min-height: 600px; /* Высота подстраивается под вашу форму */
+        }
+
         /* КНОПКИ */
         .button {
             display: inline-block;
@@ -289,18 +302,18 @@
             <div class="timing-item">
                 <span class="time">17:30</span>
                 <div class="divider"></div>
-                <span class="event">Свадебный ужин</span>
+                <span class="event">Праздничный ужин</span>
             </div>
             <div class="timing-item">
                 <span class="time">23:30</span>
                 <div class="divider"></div>
-                <span class="event">Завершение вечера</span>
+                <span class="event">Завершение банкета</span>
             </div>
         </div>
     </section>
 
     <section class="dress-section reveal">
-        <h2>Дресс-код</h2>
+        <h2>DRESS CODE</h2>
         <p style="font-size: 14px; font-weight: 300; margin-bottom: 30px;">Будем рады, если вы поддержите цветовую гамму нашей свадьбы:</p>
         <div class="dress-images">
             <img src="https://i.ibb.co/7NZ0k6rW/removebg-preview.png" alt="Ж" class="dress-image">
@@ -316,7 +329,7 @@
     </section>
 
     <section class="wishes-section reveal">
-        <h2>Пожелания</h2>
+        <h2>ПОЖЕЛАНИЯ</h2>
         <div class="wishes-text">
             <p>Просим не дарить нам цветы, прекрасной альтернативой станет бутылка вашего любимого вина</p>
             <img src="https://i.ibb.co/GvjZpxN/rings.png" alt="Кольца" class="rings-img">
@@ -325,7 +338,7 @@
     </section>
 
     <section class="location-section reveal">
-        <h2>Где всё будет</h2>
+        <h2>LOCATION</h2>
         <div class="location-info">
             <p style="font-size: 18px; font-weight: 600; margin-bottom: 5px; font-family: 'Playfair Display', serif;">Вилла Парк</p>
             <p style="font-size: 14px; opacity: 0.9; margin-top: 0;">Петергоф, Золотая ул., 4</p>
@@ -334,8 +347,13 @@
     </section>
 
     <footer class="reveal">
-        <p style="font-size: 15px; margin-bottom: 5px;">Ждем вашего ответа до 1 июня</p>
-        <a class="button" href="#" style="background: white; color: #3d2a1d !important;">Я приду!</a>
+        <p style="font-size: 15px; margin-bottom: 15px;">Просим подтвердить своё присутствие, заполнив форму ниже</p>
+        
+        <div class="form-container">
+            <script src="https://forms.yandex.ru/_static/embed.js"></script>
+            <iframe src="https://forms.yandex.ru/u/69b9d0e76d2d734c0242c611?iframe=1" frameborder="0" name="ya-form-69b9d0e76d2d734c0242c611"></iframe>
+        </div>
+
         <p style="margin-top: 40px; opacity: 0.4; font-size: 11px; letter-spacing: 2px;">#ПОЛИНАИИЛЬЯ2026</p>
     </footer>
 </div>
