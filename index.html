@@ -32,6 +32,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 400;
+            color: #3d2a1d;
         }
 
         /* АНИМАЦИЯ ПОЯВЛЕНИЯ */
@@ -118,19 +119,7 @@
             pointer-events: none;
         }
 
-        .timing-section h2 {
-            font-family: 'Playfair Display', serif;
-            letter-spacing: 10px;
-            text-transform: uppercase;
-        }
-
-        .timing-section .sub-title {
-            font-size: 12px;
-            text-transform: uppercase;
-            color: #999;
-            margin-top: -10px;
-            display: block;
-        }
+        .timing-section h2 { letter-spacing: 10px; }
 
         .timing-container {
             max-width: 400px;
@@ -153,7 +142,6 @@
             font-size: 24px; 
             color: #886468; 
             text-align: right;
-            font-weight: 400;
         }
 
         .divider {
@@ -163,11 +151,7 @@
             align-self: stretch;
         }
 
-        .event { 
-            font-size: 15px; 
-            font-weight: 300; 
-            text-align: left;
-        }
+        .event { font-size: 15px; font-weight: 300; text-align: left; }
 
         /* ДРЕСС-КОД */
         .dress-section { background: rgba(136, 100, 104, 0.08); border-radius: 40px 40px 0 0; }
@@ -176,21 +160,9 @@
         .color { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
 
         /* ПОЖЕЛАНИЯ */
-        .wishes-section {
-            background: #fdfaf7;
-            padding: 60px 25px;
-        }
-        .rings-img {
-            width: 100px;
-            margin: 20px auto;
-            display: block;
-        }
-        .wishes-text {
-            font-size: 14px;
-            max-width: 350px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
+        .wishes-section { background: #fdfaf7; padding: 60px 25px; }
+        .rings-img { width: 100px; margin: 20px auto; display: block; }
+        .wishes-text { font-size: 14px; max-width: 350px; margin: 0 auto; font-weight: 300; }
 
         /* ЛОКАЦИЯ */
         .location-section {
@@ -212,21 +184,36 @@
             padding: 20px 15px;
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 2;
         }
 
-        /* ФОРМА ЯНДЕКСА */
+        /* ФОРМА И ПОДВАЛ */
+        .form-section {
+            padding: 80px 20px;
+            background: #fdfaf7; /* Светлый фон как у всего сайта */
+        }
+
         .form-container {
             width: 100%;
             max-width: 100%;
             overflow: hidden;
-            margin-top: 20px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         
         .form-container iframe {
             width: 100%;
-            min-height: 600px; /* Высота подстраивается под вашу форму */
+            min-height: 700px;
+            border: none;
+        }
+
+        .footer-bottom {
+            padding: 40px 20px;
+            background: #3d2a1d;
+            color: white;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
         }
 
         /* КНОПКИ */
@@ -241,22 +228,11 @@
             font-size: 12px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(136,100,104,0.3); }
-
-        footer {
-            padding: 80px 20px;
-            background: #3d2a1d;
-            color: white;
-            border-radius: 40px 40px 0 0;
         }
 
         @media (max-width: 480px) {
             .main-wrapper { width: 100%; }
             section { padding: 60px 20px; }
-            .time { font-size: 20px; }
             .location-info { max-width: 240px; }
         }
     </style>
@@ -275,7 +251,6 @@
             <h3>Дорогие родные и друзья!</h3>
             <p style="font-size: 14px; font-weight: 300; margin-bottom: 10px;">В нашей жизни скоро состоится важное и радостное событие — наша свадьба.</p>
             <p style="font-size: 14px; font-weight: 300;">Мы будем счастливы, если вы проведёте вместе с нами этот особенный день.</p>
-            
             <div class="timer">
                 <div><span id="days">0</span><div class="timer-label">дней</div></div>
                 <div><span id="hours">0</span><div class="timer-label">часов</div></div>
@@ -287,28 +262,11 @@
 
     <section class="timing-section reveal">
         <h2>TIMING</h2>
-        <span class="sub-title">Расписание торжества</span>
         <div class="timing-container">
-            <div class="timing-item">
-                <span class="time">15:30</span>
-                <div class="divider"></div>
-                <span class="event">Сбор гостей / Фуршет</span>
-            </div>
-            <div class="timing-item">
-                <span class="time">16:00</span>
-                <div class="divider"></div>
-                <span class="event">Торжественная церемония</span>
-            </div>
-            <div class="timing-item">
-                <span class="time">17:30</span>
-                <div class="divider"></div>
-                <span class="event">Праздничный ужин</span>
-            </div>
-            <div class="timing-item">
-                <span class="time">23:30</span>
-                <div class="divider"></div>
-                <span class="event">Завершение банкета</span>
-            </div>
+            <div class="timing-item"><span class="time">15:30</span><div class="divider"></div><span class="event">Сбор гостей / Фуршет</span></div>
+            <div class="timing-item"><span class="time">16:00</span><div class="divider"></div><span class="event">Торжественная церемония</span></div>
+            <div class="timing-item"><span class="time">17:30</span><div class="divider"></div><span class="event">Праздничный ужин</span></div>
+            <div class="timing-item"><span class="time">23:30</span><div class="divider"></div><span class="event">Завершение банкета</span></div>
         </div>
     </section>
 
@@ -346,16 +304,18 @@
         </div>
     </section>
 
-    <footer class="reveal">
-        <p style="font-size: 15px; margin-bottom: 15px;">Просим подтвердить своё присутствие, заполнив форму ниже</p>
-        
+    <section class="form-section reveal">
+        <h2>ПОДТВЕРЖДЕНИЕ</h2>
+        <p style="font-size: 14px; font-weight: 300;">Просим подтвердить своё присутствие, заполнив форму ниже</p>
         <div class="form-container">
             <script src="https://forms.yandex.ru/_static/embed.js"></script>
             <iframe src="https://forms.yandex.ru/u/69b9d0e76d2d734c0242c611?iframe=1" frameborder="0" name="ya-form-69b9d0e76d2d734c0242c611"></iframe>
         </div>
+    </section>
 
-        <p style="margin-top: 40px; opacity: 0.4; font-size: 11px; letter-spacing: 2px;">#ПОЛИНАИИЛЬЯ2026</p>
-    </footer>
+    <div class="footer-bottom reveal">
+        <p style="opacity: 0.6; font-size: 11px; letter-spacing: 2px; margin: 0;">#ПОЛИНАИИЛЬЯ2026</p>
+    </div>
 </div>
 
 <script>
