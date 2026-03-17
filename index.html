@@ -141,17 +141,102 @@ footer{
   </div>
 </section>
 
-<section class="timing">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Timing</title>
 
-  <h2>TIMING</h2>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
 
-  <div class="timing-item">16:00 — Сбор гостей / фуршет</div>
-  <div class="timing-item">16:30 — Церемония</div>
-  <div class="timing-item">17:30 — Праздничный ужин</div>
-  <div class="timing-item">00:00 — Завершение банкета</div>
+    section {
+      padding: 40px;
+      text-align: center;
+    }
 
+    .timing {
+      background: #e1e7d0;
+      padding: 50px 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .timing h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #5e4b3c;
+    }
+
+    .timing-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .timing-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      color: #5e4b3c;
+      border-bottom: 1px solid #d0d0d0;
+      padding: 15px 0;
+      font-weight: 400;
+    }
+
+    .timing-item:last-child {
+      border-bottom: none;
+    }
+
+    .time {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3d2a1d;
+    }
+
+    .event {
+      font-size: 20px;
+      color: #5e4b3c;
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <div class="timing">
+    <h2>TIMING</h2>
+    <ul class="timing-list">
+      <li class="timing-item">
+        <div class="time">15:30</div>
+        <div class="event">Сбор гостей / Фуршет</div>
+      </li>
+      <li class="timing-item">
+        <div class="time">16:00</div>
+        <div class="event">Торжественная церемония</div>
+      </li>
+      <li class="timing-item">
+        <div class="time">17:30</div>
+        <div class="event">Праздничный ужин</div>
+      </li>
+      <li class="timing-item">
+        <div class="time">23:30</div>
+        <div class="event">Завершение банкета</div>
+      </li>
+    </ul>
+  </div>
 </section>
 
+</body>
+</html>
 <section class="dress">
 
   <h2>DRESS CODE</h2>
