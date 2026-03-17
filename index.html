@@ -11,21 +11,17 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             color: #3d2a1d;
-            background: #e2ddd9; /* Цвет полей за сайтом */
+            background: #fdfaf7; /* Светлый теплый фон для всего сайта */
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Оболочка сайта с фоновым изображением */
+        /* Оболочка сайта — теперь просто ограничивает ширину и центрирует */
         .main-wrapper {
             max-width: 500px;
             margin: 0 auto;
-            background: linear-gradient(rgba(253, 250, 247, 0.85), rgba(253, 250, 247, 0.85)), 
-                        url("https://wedwed.ru/_cache/7f9f47b9d22ec63413e39a83aa380393/68893/b_c4e875fe0554b160cb9f3de16e553dbe.webp");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Эффект параллакса при скролле */
-            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            background: white; /* Фон для всего сайта */
+            box-shadow: 0 0 40px rgba(0,0,0,0.05);
             min-height: 100vh;
         }
 
@@ -124,7 +120,17 @@
         .colors { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
         .color { width: 38px; height: 38px; border-radius: 50%; border: 2px solid white; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
 
-        /* ЛОКАЦИЯ (ВМЕСТО КАРТЫ) */
+        /* ЛОКАЦИЯ — ТЕПЕРЬ С ФОНОМ */
+        .location-section {
+            background: linear-gradient(rgba(253, 250, 247, 0.85), rgba(253, 250, 247, 0.85)), 
+                        url("https://wedwed.ru/_cache/7f9f47b9d22ec63413e39a83aa380393/68893/b_c4e875fe0554b160cb9f3de16e553dbe.webp");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Эффект параллакса при скролле */
+            padding: 80px 25px;
+            text-align: center;
+        }
+
         .location-info {
             background: white;
             padding: 40px 20px;
@@ -170,10 +176,8 @@
 
     <section>
         <div class="card reveal">
-            <h3>Дорогие родные и друзья!</h3>
-            <p style="font-size: 14px; font-weight: 300;">В нашей жизни скоро состоится важное и радостное событие — наша свадьба.  
-      Мы будем счастливы, если вы проведёте вместе с нами этот особенный день.
-</p>
+            <h3>Дорогие близкие!</h3>
+            <p style="font-size: 14px; font-weight: 300;">Один день в этом году будет для нас особенным. Мы будем счастливы, если вы проведёте его вместе с нами!</p>
             
             <div class="timer">
                 <div><span id="days">0</span><div class="timer-label">дней</div></div>
@@ -188,11 +192,11 @@
         <h2>План дня</h2>
         <div class="timing-container">
             <div class="timing-item">
-                <span class="time">16:00</span>
+                <span class="time">15:30</span>
                 <span class="event">Сбор гостей и фуршет</span>
             </div>
             <div class="timing-item">
-                <span class="time">16:30</span>
+                <span class="time">16:00</span>
                 <span class="event">Торжественная церемония</span>
             </div>
             <div class="timing-item">
@@ -200,7 +204,7 @@
                 <span class="event">Свадебный ужин</span>
             </div>
             <div class="timing-item">
-                <span class="time">00:00</span>
+                <span class="time">23:30</span>
                 <span class="event">Завершение вечера</span>
             </div>
         </div>
@@ -208,8 +212,7 @@
 
     <section class="dress-section reveal">
         <h2>Дресс-код</h2>
-        <p style="font-size: 14px; font-weight: 300; margin-bottom: 30px;">Мы хотим создать особенную атмосферу на нашем торжестве,
-        поэтому просим вас учесть дресс-код при выборе наряда</p>
+        <p style="font-size: 14px; font-weight: 300; margin-bottom: 30px;">Будем рады, если вы поддержите цветовую гамму нашей свадьбы:</p>
         
         <div class="dress-images">
             <img src="https://i.ibb.co/7NZ0k6rW/removebg-preview.png" alt="Ж" class="dress-image">
@@ -225,11 +228,11 @@
         </div>
     </section>
 
-    <section class="reveal">
+    <section class="location-section reveal">
         <h2>Где всё будет</h2>
         <div class="location-info">
-            <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Вилла Парк</p>
-            <p style="font-size: 14px; opacity: 0.8; margin-top: 0;">Золотая ул., 4, Петергоф</p>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Загородный клуб «Лес»</p>
+            <p style="font-size: 14px; opacity: 0.8; margin-top: 0;">Ленинградская область, Приозерское шоссе, 45</p>
             <a class="button" href="https://yandex.com/maps/-/CPFWvFOk" target="_blank">Как добраться</a>
         </div>
     </section>
