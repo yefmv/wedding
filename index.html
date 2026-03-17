@@ -11,16 +11,15 @@
             margin: 0;
             font-family: 'Montserrat', sans-serif;
             color: #3d2a1d;
-            background: #fdfaf7; /* Светлый теплый фон для всего сайта */
+            background: #f5f2ef;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Оболочка сайта — теперь просто ограничивает ширину и центрирует */
         .main-wrapper {
             max-width: 500px;
             margin: 0 auto;
-            background: white; /* Фон для всего сайта */
+            background: white;
             box-shadow: 0 0 40px rgba(0,0,0,0.05);
             min-height: 100vh;
         }
@@ -51,7 +50,7 @@
 
         /* ГЛАВНЫЙ ЭКРАН */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
                         url("https://i.pinimg.com/originals/3b/c4/c1/3bc4c19fcc6c7dea7043e07c58811a77.jpg");
             background-size: cover;
             background-position: center;
@@ -72,12 +71,12 @@
 
         /* КАРТОЧКА ПРИГЛАШЕНИЯ */
         .card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.98);
             width: 85%;
             margin: -60px auto 0;
             padding: 35px 20px;
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
             position: relative;
             z-index: 2;
             backdrop-filter: blur(5px);
@@ -90,9 +89,9 @@
             margin-top: 25px;
         }
 
-        .timer div { flex: 1; border-right: 1px solid #ddd; }
+        .timer div { flex: 1; border-right: 1px solid #eee; }
         .timer div:last-child { border-right: none; }
-        .timer span { font-size: 22px; font-family: 'Playfair Display', serif; display: block; color: #886468; }
+        .timer span { font-size: 24px; font-family: 'Playfair Display', serif; display: block; color: #886468; }
         .timer-label { font-size: 10px; text-transform: uppercase; opacity: 0.6; }
 
         /* ТАЙМИНГ */
@@ -105,37 +104,41 @@
             border-left: 1px solid #886468;
         }
 
-        .timing-item { margin-bottom: 25px; position: relative; }
+        .timing-item { margin-bottom: 30px; position: relative; }
         .timing-item::before {
             content: ''; position: absolute; left: -29px; top: 8px;
             width: 8px; height: 8px; background: #886468; border-radius: 50%;
         }
 
-        .time { font-family: 'Playfair Display', serif; font-size: 18px; color: #886468; }
+        .time { font-family: 'Playfair Display', serif; font-size: 18px; color: #886468; font-weight: 600; }
         .event { font-size: 15px; display: block; font-weight: 300; }
 
         /* ДРЕСС-КОД */
-        .dress-section { background: rgba(136, 100, 104, 0.1); border-radius: 40px 40px 0 0; }
+        .dress-section { background: rgba(136, 100, 104, 0.08); border-radius: 40px 40px 0 0; }
         .dress-image { width: 45%; max-width: 150px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); }
-        .colors { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
-        .color { width: 38px; height: 38px; border-radius: 50%; border: 2px solid white; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+        .colors { display: flex; justify-content: center; gap: 8px; margin-top: 25px; }
+        .color { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
 
-        /* ЛОКАЦИЯ — ТЕПЕРЬ С ФОНОМ */
+        /* ЛОКАЦИЯ */
         .location-section {
-            background: linear-gradient(rgba(253, 250, 247, 0.85), rgba(253, 250, 247, 0.85)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
                         url("https://wedwed.ru/_cache/7f9f47b9d22ec63413e39a83aa380393/68893/b_c4e875fe0554b160cb9f3de16e553dbe.webp");
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Эффект параллакса при скролле */
-            padding: 80px 25px;
+            background-attachment: fixed;
+            padding: 100px 25px;
             text-align: center;
         }
 
+        .location-section h2 { color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+
         .location-info {
-            background: white;
+            background: #ffffff;
             padding: 40px 20px;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
         }
 
         /* КНОПКИ */
@@ -153,6 +156,8 @@
             transition: 0.3s;
         }
 
+        .button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(136,100,104,0.3); }
+
         footer {
             padding: 80px 20px;
             background: #3d2a1d;
@@ -162,6 +167,7 @@
 
         @media (max-width: 480px) {
             .main-wrapper { width: 100%; }
+            section { padding: 60px 20px; }
         }
     </style>
 </head>
@@ -192,20 +198,20 @@
         <h2>План дня</h2>
         <div class="timing-container">
             <div class="timing-item">
-                <span class="time">15:30</span>
-                <span class="event">Сбор гостей и фуршет</span>
+                <span class="time">16:00</span>
+                <span class="event">Велком и сбор гостей</span>
             </div>
             <div class="timing-item">
-                <span class="time">16:00</span>
-                <span class="event">Торжественная церемония</span>
+                <span class="time">16:30</span>
+                <span class="event">Свадебная церемония</span>
             </div>
             <div class="timing-item">
                 <span class="time">17:30</span>
-                <span class="event">Свадебный ужин</span>
+                <span class="event">Праздничный банкет</span>
             </div>
             <div class="timing-item">
-                <span class="time">23:30</span>
-                <span class="event">Завершение вечера</span>
+                <span class="time">00:00</span>
+                <span class="event">Завершение мероприятия</span>
             </div>
         </div>
     </section>
@@ -213,12 +219,10 @@
     <section class="dress-section reveal">
         <h2>Дресс-код</h2>
         <p style="font-size: 14px; font-weight: 300; margin-bottom: 30px;">Будем рады, если вы поддержите цветовую гамму нашей свадьбы:</p>
-        
         <div class="dress-images">
             <img src="https://i.ibb.co/7NZ0k6rW/removebg-preview.png" alt="Ж" class="dress-image">
             <img src="https://i.ibb.co/r2BC6z93/removebg-preview.png" alt="М" class="dress-image">
         </div>
-
         <div class="colors">
             <div class="color" style="background:#dfd4d0"></div>
             <div class="color" style="background:#AF8670"></div>
@@ -231,20 +235,21 @@
     <section class="location-section reveal">
         <h2>Где всё будет</h2>
         <div class="location-info">
-            <p style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">Загородный клуб «Лес»</p>
-            <p style="font-size: 14px; opacity: 0.8; margin-top: 0;">Ленинградская область, Приозерское шоссе, 45</p>
-            <a class="button" href="https://yandex.com/maps/-/CPFWvFOk" target="_blank">Как добраться</a>
+            <p style="font-size: 18px; font-weight: 600; margin-bottom: 5px; font-family: 'Playfair Display', serif;">Вилла Парк</p>
+            <p style="font-size: 14px; opacity: 0.9; margin-top: 0;">Петергоф, Золотая ул., 4</p>
+            <a class="button" href="https://yandex.ru/maps/-/CCU8F4u08C" target="_blank">Навигатор</a>
         </div>
     </section>
 
     <footer class="reveal">
         <p style="font-size: 15px; margin-bottom: 5px;">Ждем вашего ответа до 1 июня</p>
-        <a class="button" href="#" style="background: white; color: #3d2a1d !important;">Я приду!</a>
+        <a class="button" href="https://t.me/your_nickname" style="background: white; color: #3d2a1d !important;">Я приду!</a>
         <p style="margin-top: 40px; opacity: 0.4; font-size: 11px; letter-spacing: 2px;">#ПОЛИНАИИЛЬЯ2026</p>
     </footer>
 </div>
 
 <script>
+    // ТАЙМЕР
     const weddingDate = new Date("June 29, 2026 16:00:00").getTime();
     
     function updateTimer() {
@@ -260,12 +265,15 @@
     setInterval(updateTimer, 1000);
     updateTimer();
 
+    // АНИМАЦИЯ СКРОЛЛА
     function reveal() {
         const reveals = document.querySelectorAll(".reveal");
         reveals.forEach(el => {
             const windowHeight = window.innerHeight;
             const elementTop = el.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 80) el.classList.add("active");
+            if (elementTop < windowHeight - 100) {
+                el.classList.add("active");
+            }
         });
     }
     window.addEventListener("scroll", reveal);
