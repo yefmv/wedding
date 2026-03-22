@@ -163,11 +163,20 @@
 
         .location-info {
             background: #ffffff;
-            max-width: 280px;
+            max-width: 300px;
             margin: 0 auto;
             padding: 25px 15px;
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .transfer-box {
+            margin: 20px 0;
+            padding: 15px 10px;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            background: #fdfaf7;
+            border-radius: 10px;
         }
 
         /* ФОРМА */
@@ -214,7 +223,7 @@
         /* КНОПКИ */
         .button {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 10px;
             padding: 14px 40px;
             background: #886468;
             color: white !important;
@@ -228,7 +237,7 @@
         @media (max-width: 480px) {
             .main-wrapper { width: 100%; }
             section { padding: 60px 20px; }
-            .location-info { max-width: 240px; }
+            .location-info { max-width: 280px; }
         }
     </style>
 </head>
@@ -294,7 +303,16 @@
         <h2>LOCATION</h2>
         <div class="location-info">
             <p style="font-size: 18px; font-weight: 600; margin-bottom: 5px; font-family: 'Playfair Display', serif;">Вилла Парк</p>
-            <p style="font-size: 14px; opacity: 0.9; margin-top: 0; line-height: 1.4;">Петергоф, Золотая ул., 4</p>
+            <p style="font-size: 13px; opacity: 0.8; margin-top: 0; line-height: 1.4;">Петергоф, Золотая ул., 4</p>
+            
+            <div class="transfer-box">
+                <p style="font-size: 14px; font-weight: 500; margin-bottom: 5px; color: #886468;">🚌 ТРАНСФЕР</p>
+                <p style="font-size: 12px; font-weight: 300; margin: 0; color: #3d2a1d;">
+                    Для вашего удобства будет организован трансфер в <strong>14:30</strong> от адреса: <br>
+                    <strong>Комендантский проспект, 62</strong>
+                </p>
+            </div>
+
             <a class="button" href="https://yandex.ru/maps/-/CPRzaI-B" target="_blank">Навигатор</a>
         </div>
     </section>
